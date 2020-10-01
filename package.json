@@ -1,15 +1,27 @@
 {
-  "name": "asyncloop",
+  "name": "syncloop",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "loop",
+    "sync",
+    "forloop",
+    "sync-loop",
+    "sync loop",
+    "for loop"
+  ],
+  "author": "Aleem Isiaka <aleemisiaka@gmail.com>",
   "license": "ISC",
-  "dependencies": {
-    "mocha": "^8.1.3"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckatala/frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/limistah/syncloop/issues"
+  },
+  "homepage": "https://github.com/limistah/syncloop#readme"
 }
