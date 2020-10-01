@@ -69,4 +69,19 @@ describe("Loop Synchronously", function () {
       syncForEach(arr, handler, completeCallback, 0);
     });
   });
+
+  it("should provide the items passed to doneCB() in itemHandler", function () {
+    syncForEach(
+      Array.from({ length: 12 }).fill(0),
+      function handler(item, done) {
+        done(item + 2);
+      },
+      function completeCallback(items) {
+        items.map((item) => {
+          assert.equal(item, 2);
+        });
+      },
+      0
+    );
+  });
 });

@@ -5,9 +5,9 @@
  * @param {array} array The array to loop through
  * @param {function} handler A function that receives each element of the array
  * @param {function} done A function that is executed once the array items have been exhausted and received the return value
- * @param {number} index A number where the loop should start from
+ * @param {number} currentIndex A number where the loop should start from
  */
-function syncForEach(array = [], handler, completeCallback, index = 0) {
+function syncForEach(array = [], handler, completeCallback, currentIndex = 0) {
   if (!Array.isArray(array)) {
     throw new Error("First argument must be an array");
   }
@@ -20,20 +20,20 @@ function syncForEach(array = [], handler, completeCallback, index = 0) {
     throw new Error("Third argument(completeCallback) must be a function");
   }
 
-  if (index && typeof index !== "number") {
-    throw new Error("Fourth argument(currentIndex) must be a number");
+  if (currentIndex && typeof currentIndex !== "number") {
+    throw new Error("Fourth argument(currentcurrentIndex) must be a number");
   }
 
   syncForEach.returns =
     syncForEach.returns || Array.from({ length: array.length }).fill(null);
-  if (index >= 0 && array.length >= index + 1) {
+  if (currentIndex >= 0 && array.length >= currentIndex + 1) {
     handler(
-      array[index],
+      array[currentIndex],
       function processDoneCB(retValue) {
-        syncForEach.returns[index] = retValue;
-        syncForEach(array, handler, completeCallback, index + 1);
+        syncForEach.returns[currentIndex] = retValue;
+        syncForEach(array, handler, completeCallback, currentIndex + 1);
       },
-      index
+      currentIndex
     );
   } else {
     completeCallback(syncForEach.returns);
