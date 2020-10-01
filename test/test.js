@@ -44,4 +44,29 @@ describe("Loop Synchronously", function () {
       );
     });
   });
+
+  context("should call the function:", function () {
+    it("handler", function () {
+      syncForEach(
+        Array.from({ length: 12 }).fill(0),
+        function handler(item) {
+          assert.equal(item, 0);
+        },
+        noop,
+        0
+      );
+    });
+
+    it("completeCallback", function () {
+      const arr = Array.from({ length: 12 }).fill(0);
+
+      function handler(item, done) {
+        done(item);
+      }
+      function completeCallback(items) {
+        assert.equal(items.length, 12);
+      }
+      syncForEach(arr, handler, completeCallback, 0);
+    });
+  });
 });

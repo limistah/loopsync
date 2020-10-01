@@ -20,7 +20,7 @@ function syncForEach(array = [], handler, completeCallback, index = 0) {
     throw new Error("Third argument(completeCallback) must be a function");
   }
 
-  if (index && typeof handler !== "number") {
+  if (index && typeof index !== "number") {
     throw new Error("Fourth argument(currentIndex) must be a number");
   }
 
