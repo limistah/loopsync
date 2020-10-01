@@ -39,3 +39,5 @@ function syncForEach(array = [], handler, completeCallback, index = 0) {
     completeCallback(syncForEach.returns);
   }
 }
+
+module.exports = syncForEach;
