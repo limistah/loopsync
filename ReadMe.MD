@@ -4,7 +4,7 @@ A Module to loop through an array synchronously
 
 ## Installation
 
-```
+```bash
 npm install loopsync --save
 // or
 yarn add loopsync
@@ -12,7 +12,7 @@ yarn add loopsync
 
 ## Basic usage
 
-```
+```javascript
 const loopsync = require("loopsync");
 
 const arr = Array.from({ length: 12 }).fill(0);
