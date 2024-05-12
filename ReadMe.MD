@@ -41,4 +41,4 @@ The default export for this module is a function that accepts three arguments
 
 ## Credits
 
-Built with 💘💘💘 by [Aleem Isiaka](https://aleemisiaka.com)
+Built with 💘💘💘 by [limistah](https://limistah.dev)
